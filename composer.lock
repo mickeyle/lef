@@ -2207,6 +2207,7 @@
         "jms/serializer-bundle": 20,
         "nelmio/api-doc-bundle": 20
     },
+    "prefer-stable": false,
     "platform": {
         "php": ">=5.3.3"
     },

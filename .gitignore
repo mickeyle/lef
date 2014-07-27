@@ -1,0 +1,11 @@
+.buildpath
+.project
+.settings/
+README.md
+UPGRADE*.md
+LICENSE
+*~
+*.cache
+/app/cache/
+/app/logs/
+/vendor/

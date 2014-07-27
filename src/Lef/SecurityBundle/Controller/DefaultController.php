@@ -7,6 +7,7 @@ use Symfony\Component\Security\Core\SecurityContextInterface;
 
 class DefaultController extends Controller
 {
+    
     public function loginAction(Request $request)
     {
         $session = $request->getSession();
