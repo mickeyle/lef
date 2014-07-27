@@ -6,6 +6,6 @@ UPGRADE*.md
 LICENSE
 *~
 *.cache
-/app/cache/
-/app/logs/
-/vendor/
+app/cache/
+app/logs/
+vendor/
