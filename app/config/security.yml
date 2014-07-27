@@ -1,0 +1,24 @@
+security:
+    encoders:
+        Lef\UserBundle\Entity\User:
+            algorithm: sha512
+
+    providers:
+        main:
+            entity: { class: LefUserBundle:User, property: mobile }
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            pattern: /.*
+            form_login:
+                check_path: /login_check
+                login_path: /login
+            logout: true
+            security: true
+            anonymous: ~
+
+    access_control: ~

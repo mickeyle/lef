@@ -1,0 +1,13 @@
+lef_security:
+    resource: "@LefSecurityBundle/Resources/config/routing.yml"
+    prefix:   /
+
+lef_user:
+    resource: "@LefUserBundle/Resources/config/routing.yml"
+    prefix:   /
+    type:     rest
+
+nelmio_apidoc:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix: /v3/doc
+
