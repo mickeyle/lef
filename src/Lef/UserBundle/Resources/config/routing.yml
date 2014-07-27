@@ -1,0 +1,15 @@
+lef_user:
+    resource: Lef\UserBundle\Controller\UserController
+    type: rest
+    prefix: /v3
+    name_prefix: api_3_
+lef_user_profile:
+    resource: Lef\UserBundle\Controller\ProfileController
+    type: rest
+    parent: lef_user
+    name_prefix: api_3_
+lef_user_photo:
+    resource: Lef\UserBundle\Controller\PhotoController
+    type: rest
+    parent: lef_user
+    name_prefix: api_3_
