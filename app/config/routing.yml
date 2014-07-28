@@ -1,10 +1,20 @@
-web_site:
-    resource: "@WebSiteBundle/Resources/config/routing.yml"
-    prefix:   /
+
+api_user:
+    resource: "@ApiUserBundle/Resources/config/routing.yml"
+    prefix:   /api
+
+api_file:
+    resource: "@ApiFileBundle/Resources/config/routing.yml"
+    prefix:   /api
+    type:     rest
 
 api_blog:
     resource: "@ApiBlogBundle/Resources/config/routing.yml"
     prefix:   /api
+
+web_site:
+    resource: "@WebSiteBundle/Resources/config/routing.yml"
+    prefix:   /
 
 lef_user:
     resource: "@LefUserBundle/Resources/config/routing.yml"

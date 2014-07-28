@@ -1,0 +1,7 @@
+parameters:
+#    api_file.example.class: Api\FileBundle\Example
+
+services:
+#    api_file.example:
+#        class: %api_file.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

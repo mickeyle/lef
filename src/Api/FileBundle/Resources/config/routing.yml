@@ -1,0 +1,4 @@
+api_file_photo:
+    resource: Api\FileBundle\Controller\PhotoController
+    type:     rest
+    name_prefix: api_

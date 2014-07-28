@@ -82,6 +82,8 @@ doctrine_mongodb:
     connections:
         blog:
             server: 127.0.0.1
+        file:
+            server: 127.0.0.1
 
     document_managers:
         blog:
@@ -89,6 +91,11 @@ doctrine_mongodb:
             database: lef_blog
             mappings:
                 DatBlogBundle: ~
+        file:
+            connection: file
+            database: lef_file
+            mappings:
+                DatFileBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
