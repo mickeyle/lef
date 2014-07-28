@@ -1,6 +1,7 @@
 .buildpath
 .project
 .settings/
+.DS_Store
 README.md
 UPGRADE*.md
 LICENSE

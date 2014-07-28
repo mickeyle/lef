@@ -1,7 +1,0 @@
-parameters:
-#    lef_security.example.class: Lef\SecurityBundle\Example
-
-services:
-#    lef_security.example:
-#        class: %lef_security.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]

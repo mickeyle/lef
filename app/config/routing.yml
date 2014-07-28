@@ -1,10 +1,10 @@
+web_site:
+    resource: "@WebSiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
 api_blog:
     resource: "@ApiBlogBundle/Resources/config/routing.yml"
     prefix:   /api
-
-lef_security:
-    resource: "@LefSecurityBundle/Resources/config/routing.yml"
-    prefix:   /
 
 lef_user:
     resource: "@LefUserBundle/Resources/config/routing.yml"
@@ -13,5 +13,5 @@ lef_user:
 
 nelmio_apidoc:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
-    prefix: /v3/doc
+    prefix:   /v3/doc
 

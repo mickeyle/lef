@@ -1,8 +1,0 @@
-index:
-    path:     /
-    defaults: { _controller: LefSecurityBundle:Default:index }
-login:
-    path:     /login
-    defaults: { _controller: LefSecurityBundle:Default:login }
-login_check:
-    path:     /login_check

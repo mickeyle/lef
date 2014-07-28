@@ -1,23 +1,18 @@
 <?php
-namespace Lef\SecurityBundle\Controller;
+namespace Web\SiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
-class DefaultController extends Controller
+class SecurityController extends Controller
 {
-
-    public function indexAction()
-    {
-    	return $this->render('LefSecurityBundle:Default:index.html.twig');
-    }
 
     public function loginAction(Request $request)
     {
         $session = $request->getSession();
         
-        if ($request->attributes->has(SecurityContextInterface::AUTHENTICATION_ERROR)) {
+        if ($request->request->has(SecurityContextInterface::AUTHENTICATION_ERROR)) {
             $error = $request->attributes->get(SecurityContextInterface::AUTHENTICATION_ERROR);
         } elseif (null !== $session && $session->has(SecurityContextInterface::AUTHENTICATION_ERROR)) {
             $error = $session->get(SecurityContextInterface::AUTHENTICATION_ERROR);
@@ -28,7 +23,7 @@ class DefaultController extends Controller
         
         $lastUsername = (null === $session) ? '' : $session->get(SecurityContextInterface::LAST_USERNAME);
         
-        return $this->render('LefSecurityBundle:Default:login.html.twig', array(
+        return $this->render('WebSiteBundle:Security:login.html.twig', array(
             'last_username' => $lastUsername,
             'error' => $error
         ));

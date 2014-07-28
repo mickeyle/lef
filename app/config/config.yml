@@ -76,7 +76,6 @@ doctrine:
                 connection: lefuser
                 mappings:
                     LefUserBundle: ~
-                    LefSecurityBundle: ~
 
 # Doctrine Mongodb Configuration
 doctrine_mongodb:
