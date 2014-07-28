@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             
             new Web\SiteBundle\WebSiteBundle(),
             
+            new Api\CommonBundle\ApiCommonBundle(),
             new Api\UserBundle\ApiUserBundle(),
             new Api\BlogBundle\ApiBlogBundle(),
             new Api\FileBundle\ApiFileBundle(),

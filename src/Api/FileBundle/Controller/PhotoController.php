@@ -6,6 +6,7 @@ use FOS\RestBundle\Controller\Annotations;
 use FOS\RestBundle\Util\Codes;
 use Symfony\Component\HttpFoundation\Request;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+use Api\CommonBundle\Exception\InvalidFormException;
 
 class PhotoController extends FOSRestController
 {
@@ -15,6 +16,7 @@ class PhotoController extends FOSRestController
      *
      * @ApiDoc(
      * resource = true,
+     * input = "Api\FileBundle\Form\PhotoType",
      * statusCodes = {
      * 201 = "Returned when successful",
      * 400 = "Returned when the form has errors"
@@ -27,10 +29,17 @@ class PhotoController extends FOSRestController
      *            请求对象
      * @param int $userId
      *            上传图片用户ID
-     * @param int $type
-     *            1:avatar|2:post
      * @return FormTypeInterface View
      */
-    public function postPhotoAction(Request $request, $userId, $type)
-    {}
+    public function postPhotoAction(Request $request, $userId)
+    {
+        return array();
+        /*
+        try {
+        	
+        } catch (InvalidFormException $e) {
+            return $e->getForm();
+        }
+        */
+    }
 }

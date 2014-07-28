@@ -1,7 +1,1 @@
-parameters:
-    dat_blog.document.post.class: Dat\BlogBundle\Document\Post
 
-services:
-    dat_blog.document.post_handler:
-        class: %dat_blog.document.post.class%
-        arguments: [@doctrine_mongodb.odm.blog_document_manager]

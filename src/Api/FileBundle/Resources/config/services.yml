@@ -1,7 +1,8 @@
 parameters:
-#    api_file.example.class: Api\FileBundle\Example
+    api_file.photo.class: Dat\FileBundle\Document\Photo
+    api_file.photo_handler.class: Dat\FileBundle\Handler\PhotoHandler
 
 services:
-#    api_file.example:
-#        class: %api_file.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    api_file.photo_handler:
+        class: %api_file.photo_handler.class%
+        arguments: [@doctrine_mongodb.odm.file_document_manager]
