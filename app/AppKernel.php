@@ -23,7 +23,7 @@ class AppKernel extends Kernel
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             
             new Lef\UserBundle\LefUserBundle(),
-            new Dat\CommonBundle\DatCommonBundle(),
+            new Dat\DataBundle\DatDataBundle(),
             new Dat\BlogBundle\DatBlogBundle(),
             new Dat\UserBundle\DatUserBundle(),
             new Dat\FileBundle\DatFileBundle(),

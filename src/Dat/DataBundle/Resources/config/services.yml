@@ -1,0 +1,7 @@
+parameters:
+#    dat_data.example.class: Dat\DataBundle\Example
+
+services:
+#    dat_data.example:
+#        class: %dat_data.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
