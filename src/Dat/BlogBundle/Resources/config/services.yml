@@ -1,7 +1,7 @@
 parameters:
-#    dat_blog.example.class: Dat\BlogBundle\Example
+    dat_blog.document.post.class: Dat\BlogBundle\Document\Post
 
 services:
-#    dat_blog.example:
-#        class: %dat_blog.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    dat_blog.document.post_handler:
+        class: %dat_blog.document.post.class%
+        arguments: [@doctrine_mongodb.odm.blog_document_manager]
