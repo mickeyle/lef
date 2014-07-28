@@ -7,7 +7,12 @@ use Symfony\Component\Security\Core\SecurityContextInterface;
 
 class DefaultController extends Controller
 {
-    
+
+    public function indexAction()
+    {
+    	return $this->render('LefSecurityBundle:Default:index.html.twig');
+    }
+
     public function loginAction(Request $request)
     {
         $session = $request->getSession();
