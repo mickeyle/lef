@@ -1,6 +1,6 @@
-dat_blog:
-    resource: "@DatBlogBundle/Resources/config/routing.yml"
-    prefix:   /
+api_blog:
+    resource: "@ApiBlogBundle/Resources/config/routing.yml"
+    prefix:   /api
 
 lef_security:
     resource: "@LefSecurityBundle/Resources/config/routing.yml"

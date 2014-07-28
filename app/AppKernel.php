@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Lef\UserBundle\LefUserBundle(),
             new Lef\SecurityBundle\LefSecurityBundle(),
             new Dat\BlogBundle\DatBlogBundle(),
+            new Api\BlogBundle\ApiBlogBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
