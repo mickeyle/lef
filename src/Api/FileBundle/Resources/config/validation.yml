@@ -1,0 +1,7 @@
+Api\FileBundle\Model\PhotoUpload:
+    properties:
+        type:
+            - NotBlank: ~
+            - Choice: { choices: [avatar, post]}
+        file:
+            - Image: ~

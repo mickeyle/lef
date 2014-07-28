@@ -16,7 +16,7 @@ class PhotoController extends FOSRestController
      *
      * @ApiDoc(
      * resource = true,
-     * input = "Api\FileBundle\Form\PhotoType",
+     * input = "Api\FileBundle\Model\PhotoUpload",
      * statusCodes = {
      * 201 = "Returned when successful",
      * 400 = "Returned when the form has errors"
@@ -33,13 +33,16 @@ class PhotoController extends FOSRestController
      */
     public function postPhotoAction(Request $request, $userId)
     {
-        return array();
-        /*
         try {
-        	
-        } catch (InvalidFormException $e) {
-            return $e->getForm();
+            $newPhoto = $this->get('api_file.photo_handler')->post($request->request->all() + $request->files->all());
+            $routeOptions = array(
+                'id' => 1,
+                '_format' => $request->get('_format')
+            );
+            
+            return $this->routeRedirectView('api_get_photo', $routeOptions, Codes::HTTP_CREATED);
+        } catch (InvalidFormException $ex) {
+            return $ex->getForm();
         }
-        */
     }
 }

@@ -15,12 +15,19 @@ abstract class Handler
 
     protected $repository;
 
+    /**
+     * 
+     * @var FormFactoryInterface
+     */
     protected $formFactory;
+    
+    protected $className;
 
     public function __construct(ObjectManager $objectManager, $className, FormFactoryInterface $formFactory)
     {
         $this->objectManager = $objectManager;
-        $this->repository = $this->objectManager->getRepository($className);
+        $this->className = $className;
+        $this->repository = $this->objectManager->getRepository($this->className);
         $this->formFactory = $formFactory;
     }
 
