@@ -78,6 +78,19 @@ doctrine:
                     LefUserBundle: ~
                     LefSecurityBundle: ~
 
+# Doctrine Mongodb Configuration
+doctrine_mongodb:
+    connections:
+        blog:
+            server: 127.0.0.1
+
+    document_managers:
+        blog:
+            connection: blog
+            database: lef_blog
+            mappings:
+                DatBlogBundle: ~
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"

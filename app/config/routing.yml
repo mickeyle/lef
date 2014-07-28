@@ -1,3 +1,7 @@
+dat_blog:
+    resource: "@DatBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
 lef_security:
     resource: "@LefSecurityBundle/Resources/config/routing.yml"
     prefix:   /
