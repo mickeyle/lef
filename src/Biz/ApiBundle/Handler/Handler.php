@@ -1,8 +1,9 @@
 <?php
-namespace Api\CommonBundle\Handler;
+namespace Biz\ApiBundle\Handler;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Form\FormFactoryInterface;
+use Doctrine\Common\Persistence\ObjectRepository;
 
 abstract class Handler
 {
@@ -13,15 +14,19 @@ abstract class Handler
      */
     protected $objectManager;
 
+    protected $className;
+
+    /**
+     *
+     * @var ObjectRepository
+     */
     protected $repository;
 
     /**
-     * 
+     *
      * @var FormFactoryInterface
      */
     protected $formFactory;
-    
-    protected $className;
 
     public function __construct(ObjectManager $objectManager, $className, FormFactoryInterface $formFactory)
     {
@@ -31,8 +36,13 @@ abstract class Handler
         $this->formFactory = $formFactory;
     }
 
-    protected function get($id)
+    public function get($id)
     {
         return $this->repository->find($id);
+    }
+
+    public function create()
+    {
+        return new $this->className();
     }
 }

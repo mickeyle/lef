@@ -29,11 +29,7 @@ class AppKernel extends Kernel
             new Dat\FileBundle\DatFileBundle(),
             
             new Web\SiteBundle\WebSiteBundle(),
-            
-            new Api\CommonBundle\ApiCommonBundle(),
-            new Api\UserBundle\ApiUserBundle(),
-            new Api\BlogBundle\ApiBlogBundle(),
-            new Api\FileBundle\ApiFileBundle(),
+            new Biz\ApiBundle\BizApiBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

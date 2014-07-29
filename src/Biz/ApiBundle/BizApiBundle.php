@@ -1,9 +1,9 @@
 <?php
 
-namespace Api\BlogBundle;
+namespace Biz\ApiBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ApiBlogBundle extends Bundle
+class BizApiBundle extends Bundle
 {
 }

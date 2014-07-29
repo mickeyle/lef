@@ -1,8 +1,0 @@
-parameters:
-    api_file.photo.class: Dat\FileBundle\Document\Photo
-    api_file.photo_handler.class: Api\FileBundle\Handler\PhotoHandler
-
-services:
-    api_file.photo_handler:
-        class: %api_file.photo_handler.class%
-        arguments: [@doctrine_mongodb.odm.file_document_manager, %api_file.photo.class%, @form.factory]

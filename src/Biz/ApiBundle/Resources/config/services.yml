@@ -1,0 +1,8 @@
+parameters:
+    biz_api.user.class: Dat\UserBundle\Entity\User
+    biz_api.user_handler.class: Biz\ApiBundle\Handler\UserHandler
+
+services:
+    biz_api.user_handler:
+        class: %biz_api.user_handler.class%
+        arguments: [@doctrine.orm.lefuser_entity_manager, %biz_api.user.class%, @form.factory, @security.encoder_factory]

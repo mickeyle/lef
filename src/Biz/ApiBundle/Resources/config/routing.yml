@@ -1,0 +1,4 @@
+lef_user:
+    resource: Biz\ApiBundle\Controller\UserController
+    type: rest
+    name_prefix: api_
