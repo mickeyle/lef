@@ -1,6 +1,8 @@
 <?php
 namespace Api\FileBundle\Model;
 
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 class PhotoUpload
 {
 
@@ -10,5 +12,8 @@ class PhotoUpload
      */
     public $type;
 
+    /**
+     * @var UploadedFile
+     */
     public $file;
 }

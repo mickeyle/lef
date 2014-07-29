@@ -31,12 +31,16 @@ class PhotoController extends FOSRestController
      *            上传图片用户ID
      * @return FormTypeInterface View
      */
-    public function postPhotoAction(Request $request, $userId)
+    public function postPhotoAction(Request $request)
     {
         try {
-            $newPhoto = $this->get('api_file.photo_handler')->post($request->request->all() + $request->files->all());
+            
+            $newPhoto = $this->get('api_file.photo_handler')->post(array(
+                'type' => $request->request->get('type'),
+                'file' => $request->files->get('file')
+            ));
             $routeOptions = array(
-                'id' => 1,
+                'userId' => 4,
                 '_format' => $request->get('_format')
             );
             
