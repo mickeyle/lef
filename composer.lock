@@ -1449,12 +1449,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nelmio/NelmioApiDocBundle.git",
-                "reference": "c03d35bee448ad29838b7f1dc0e23831d6c7e3bc"
+                "reference": "310a1f8cfdc15284f323b937f16108124fc307d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nelmio/NelmioApiDocBundle/zipball/c03d35bee448ad29838b7f1dc0e23831d6c7e3bc",
-                "reference": "c03d35bee448ad29838b7f1dc0e23831d6c7e3bc",
+                "url": "https://api.github.com/repos/nelmio/NelmioApiDocBundle/zipball/310a1f8cfdc15284f323b937f16108124fc307d9",
+                "reference": "310a1f8cfdc15284f323b937f16108124fc307d9",
                 "shasum": ""
             },
             "require": {
@@ -1486,7 +1486,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev"
+                    "dev-master": "2.7.x-dev"
                 }
             },
             "autoload": {
@@ -1515,7 +1515,7 @@
                 "documentation",
                 "rest"
             ],
-            "time": "2014-07-14 19:24:21"
+            "time": "2014-07-30 09:25:40"
         },
         {
             "name": "phpcollection/phpcollection",
