@@ -1,11 +1,11 @@
 <?php
-namespace Lef\UserBundle\Form;
+namespace Biz\ApiBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class ProfileType extends AbstractType
+class UserProfileType extends AbstractType
 {
 
     /**
@@ -28,7 +28,7 @@ class ProfileType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Lef\UserBundle\Entity\Profile',
+            'data_class' => 'Dat\UserBundle\Entity\Profile',
             'csrf_protection' => false
         ));
     }

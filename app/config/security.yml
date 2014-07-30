@@ -1,11 +1,11 @@
 security:
     encoders:
-        Lef\UserBundle\Entity\User:
+        Dat\UserBundle\Entity\User:
             algorithm: sha512
 
     providers:
         main:
-            entity: { class: LefUserBundle:User, property: mobile }
+            entity: { class: DatUserBundle:User, property: mobile }
 
     firewalls:
         dev:

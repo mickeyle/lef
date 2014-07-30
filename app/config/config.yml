@@ -75,7 +75,6 @@ doctrine:
             lefuser:
                 connection: lefuser
                 mappings:
-                    LefUserBundle: ~
                     DatUserBundle: ~
 
 # Doctrine Mongodb Configuration

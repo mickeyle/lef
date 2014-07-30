@@ -1,4 +1,14 @@
-lef_user:
+api_user:
     resource: Biz\ApiBundle\Controller\UserController
     type: rest
     name_prefix: api_
+api_user_profile:
+    resource: Biz\ApiBundle\Controller\UserProfileController
+    type: rest
+    name_prefix: api_
+    parent: api_user
+api_user_avatar:
+    resource: Biz\ApiBundle\Controller\UserAvatarController
+    type: rest
+    name_prefix: api_
+    parent: api_user

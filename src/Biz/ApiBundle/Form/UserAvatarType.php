@@ -5,7 +5,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class PhotoType extends AbstractType
+class UserAvatarType extends AbstractType
 {
 
     /**
@@ -25,7 +25,7 @@ class PhotoType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Lef\UserBundle\Entity\Photo',
+            'data_class' => 'Dat\FileBundle\Document\Photo',
             'csrf_protection' => false
         ));
     }

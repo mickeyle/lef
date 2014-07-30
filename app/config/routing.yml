@@ -7,11 +7,6 @@ api_user:
     prefix:   /api
     type:     rest
 
-lef_user:
-    resource: "@LefUserBundle/Resources/config/routing.yml"
-    prefix:   /
-    type:     rest
-
 nelmio_apidoc:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /v3/doc
