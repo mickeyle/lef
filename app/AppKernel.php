@@ -28,8 +28,8 @@ class AppKernel extends Kernel
             new Dat\UserBundle\DatUserBundle(),
             new Dat\FileBundle\DatFileBundle(),
             
-            new Web\SiteBundle\WebSiteBundle(),
             new Biz\ApiBundle\BizApiBundle(),
+            new Biz\WebBundle\BizWebBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

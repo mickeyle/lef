@@ -1,9 +1,9 @@
 <?php
 
-namespace Web\SiteBundle;
+namespace Biz\WebBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class WebSiteBundle extends Bundle
+class BizWebBundle extends Bundle
 {
 }

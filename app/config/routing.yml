@@ -1,11 +1,11 @@
+biz_web:
+    resource: "@BizWebBundle/Resources/config/routing.yml"
+    prefix:   /
+
 api_user:
     resource: "@BizApiBundle/Resources/config/routing.yml"
     prefix:   /api
     type:     rest
-
-web_site:
-    resource: "@WebSiteBundle/Resources/config/routing.yml"
-    prefix:   /
 
 lef_user:
     resource: "@LefUserBundle/Resources/config/routing.yml"

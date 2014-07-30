@@ -1,13 +1,13 @@
 <?php
-namespace Web\SiteBundle\Controller;
+
+namespace Biz\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-
     public function indexAction()
     {
-        return $this->render('WebSiteBundle:Default:index.html.twig');
+        return $this->render('BizWebBundle:Default:index.html.twig');
     }
 }

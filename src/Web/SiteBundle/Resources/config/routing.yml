@@ -1,8 +1,0 @@
-index:
-    path:     /
-    defaults: { _controller: WebSiteBundle:Default:index }
-login:
-    path:     /login
-    defaults: { _controller: WebSiteBundle:Security:login }
-login_check:
-    path:     /login_check

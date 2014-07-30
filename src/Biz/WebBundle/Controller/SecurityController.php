@@ -1,5 +1,5 @@
 <?php
-namespace Web\SiteBundle\Controller;
+namespace Biz\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +23,7 @@ class SecurityController extends Controller
         
         $lastUsername = (null === $session) ? '' : $session->get(SecurityContextInterface::LAST_USERNAME);
         
-        return $this->render('WebSiteBundle:Security:login.html.twig', array(
+        return $this->render('BizWebBundle:Security:login.html.twig', array(
             'last_username' => $lastUsername,
             'error' => $error
         ));
