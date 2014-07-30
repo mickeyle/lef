@@ -20,3 +20,11 @@ Dat\UserBundle\Entity\Profile:
     properties:
         gender:
             - Choice: { choices: [male,female]}
+
+Biz\ApiBundle\Model\UserAvatar:
+    properties:
+        file:
+            - NotBlank: ~
+            - File:
+                maxSize: 60k
+            - Image: ~

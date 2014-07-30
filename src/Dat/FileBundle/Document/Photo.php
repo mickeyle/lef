@@ -3,6 +3,7 @@ namespace Dat\FileBundle\Document;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @MongoDB\Document(
@@ -11,12 +12,6 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
  */
 class Photo
 {
-
-    /**
-     *
-     * @var string 头像
-     */
-    const AVATAR = 'avatar';
 
     private $tmp;
 
@@ -36,7 +31,7 @@ class Photo
     protected $path;
 
     /**
-     *
+     * @
      * @var UploadedFile
      */
     private $file;
@@ -177,11 +172,11 @@ class Photo
     }
 
     /**
-     * @MongoDB\PrePersist()
-     * @MongoDB\PreUpdate()
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
      */
     public function perUpload()
-    {
+    { 
         if (null !== $this->getFile()) {
             $filename = sha1(uniqid(mt_rand(), true));
             $this->path = $filename . '.' . $this->getFile()->guessExtension();
@@ -189,8 +184,8 @@ class Photo
     }
 
     /**
-     * @MongoDB\PostPersist()
-     * @MongoDB\PostUpdate()
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
      */
     public function upload()
     {
@@ -207,7 +202,7 @@ class Photo
     }
 
     /**
-     * @MongoDB\PostRemove()
+     * @ORM\PostRemove()
      */
     public function removeUpload()
     {

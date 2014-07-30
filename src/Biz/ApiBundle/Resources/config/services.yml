@@ -1,8 +1,12 @@
 parameters:
     biz_api.user.class: Dat\UserBundle\Entity\User
     biz_api.user_handler.class: Biz\ApiBundle\Handler\UserHandler
+
     biz_api.user_profile.class: Dat\UserBundle\Entity\Profile
     biz_api.user_profile_handler.class: Biz\ApiBundle\Handler\UserProfileHandler
+
+    biz_api.user_avatar.class: Dat\FileBundle\Document\Photo
+    biz_api.user_avatar_handler.class: Biz\ApiBundle\Handler\UserAvatarHandler
 
 services:
     biz_api.user_handler:
@@ -11,3 +15,6 @@ services:
     biz_api.user_profile_handler:
         class: %biz_api.user_profile_handler.class%
         arguments: [@doctrine.orm.lefuser_entity_manager, %biz_api.user_profile.class%, @form.factory]
+    biz_api.user_avatar_Handler:
+        class: %biz_api.user_avatar_handler.class%
+        arguments: [@doctrine_mongodb.odm.file_document_manager, %biz_api.user_avatar.class%, @form.factory]

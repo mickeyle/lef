@@ -1,5 +1,5 @@
 <?php
-namespace Lef\UserBundle\Form;
+namespace Biz\ApiBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -7,6 +7,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class UserAvatarType extends AbstractType
 {
+    public $file;
 
     /**
      *
@@ -25,7 +26,7 @@ class UserAvatarType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Dat\FileBundle\Document\Photo',
+            'data_class' => 'Biz\ApiBundle\Model\UserAvatar',
             'csrf_protection' => false
         ));
     }
