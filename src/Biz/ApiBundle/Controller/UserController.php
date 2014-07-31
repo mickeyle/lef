@@ -11,6 +11,7 @@ use Biz\ApiBundle\Exception\InvalidFormException;
 
 class UserController extends FOSRestController
 {
+
     const USER_HANDLER = 'biz_api.user_handler';
 
     /**
@@ -40,15 +41,6 @@ class UserController extends FOSRestController
         return $user;
     }
 
-    protected function getOr404($id)
-    {
-        if (! ($user = $this->get(self::USER_HANDLER)->get($id))) {
-            throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.', $id));
-        }
-        
-        return $user;
-    }
-    
     /**
      * Register a user
      *
@@ -75,10 +67,19 @@ class UserController extends FOSRestController
                 'id' => $newUser->getId(),
                 '_format' => $this->container->get('request')->get('_format')
             );
-    
+            
             return $this->routeRedirectView('api_get_user', $routeOptions, Codes::HTTP_CREATED);
         } catch (InvalidFormException $e) {
             return $e->getForm();
         }
+    }
+
+    protected function getOr404($id)
+    {
+        if (! ($user = $this->get(self::USER_HANDLER)->get($id))) {
+            throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.', $id));
+        }
+        
+        return $user;
     }
 }

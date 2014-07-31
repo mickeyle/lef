@@ -78,10 +78,10 @@ class UserAvatarController extends FOSRestController
 
     protected function getOr404($id)
     {
-        if (! ($user = $this->get(self::USER_AVATAR_HANDLER)->get($id))) {
+        if (! ($avatar = $this->get(self::USER_AVATAR_HANDLER)->get($id))) {
             throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.', $id));
         }
         
-        return $user;
+        return $avatar;
     }
 }

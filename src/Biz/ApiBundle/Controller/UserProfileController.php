@@ -126,10 +126,10 @@ class UserProfileController extends FOSRestController
 
     protected function getOr404($id)
     {
-        if (! ($user = $this->get(self::USER_PROFILE_HANDLER)->get($id))) {
+        if (! ($profile = $this->get(self::USER_PROFILE_HANDLER)->get($id))) {
             throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.', $id));
         }
         
-        return $user;
+        return $profile;
     }
 }
