@@ -6,6 +6,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Request\ParamFetcherInterface;
 use FOS\RestBundle\Controller\Annotations;
+use FOS\RestBundle\Util\Codes;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 class PostController extends FOSRestController
@@ -42,6 +43,8 @@ class PostController extends FOSRestController
         $offset = $paramFetcher->get('offset');
         $offset = null == $offset ? 0 : $offset;
         $limit = $paramFetcher->get('limit');
+        
+        return $this->get(self::POST_HANDLER)->all($offset, $limit);
     }
 
     /**
@@ -92,7 +95,7 @@ class PostController extends FOSRestController
     public function postPostAction(Request $request)
     {
         try {
-            $newPost = $this->get(self::POST_HANDLER)->post($request->request->all());
+            $newPost = $this->get(self::POST_HANDLER)->post($request->request->all(), 3);
             
             $routeOptions = array(
                 'id' => $newPost->getId(),
@@ -111,7 +114,7 @@ class PostController extends FOSRestController
      *
      * @ApiDoc(
      * resource = true,
-     * input = "Biz\ApiBundle\Form\PageType",
+     * input = "Biz\ApiBundle\Form\PostType",
      * statusCodes = {
      * 201 = "Returned when the Page is created",
      * 204 = "Returned when successful",
@@ -125,7 +128,7 @@ class PostController extends FOSRestController
      *            the page id
      *            
      * @return FormTypeInterface View
-     * @throws NotFoundHttpException when page not exist
+     * @throws NotFoundHttpException when post not exist
      */
     public function putPostAction(Request $request, $id)
     {
@@ -139,13 +142,12 @@ class PostController extends FOSRestController
             }
             
             $routeOptions = array(
-                'id' => $page->getId(),
+                'id' => $post->getId(),
                 '_format' => $request->get('_format')
             );
             
             return $this->routeRedirectView('api_get_post', $routeOptions, $statusCode);
         } catch (InvalidFormException $exception) {
-            
             return $exception->getForm();
         }
     }
@@ -155,7 +157,7 @@ class PostController extends FOSRestController
      *
      * @ApiDoc(
      * resource = true,
-     * input = "Acme\DemoBundle\Form\PageType",
+     * input = "Biz\ApiBundle\Form\PostType",
      * statusCodes = {
      * 204 = "Returned when successful",
      * 400 = "Returned when the form has errors"
@@ -194,20 +196,22 @@ class PostController extends FOSRestController
      * resource = true,
      * description = "Delete a Post for a given id.",
      * statusCodes = {
-     * 200 = "Returned when successful",
+     * 204 = "Returned when successful",
      * 404 = "Returned when the page is not found"
      * }
      * )
      *
      * @param int $id
      *            the post id
-     *            
-     * @return array
      *
      * @throws NotFoundHttpException when post not exist
      */
     public function deletePostAction($id)
-    {}
+    {
+    	$post = $this->getOr404($id);
+    	
+    	$this->get(self::POST_HANDLER)->delete($post);
+    }
 
     protected function getOr404($id)
     {
