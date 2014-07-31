@@ -37,7 +37,7 @@ class Post
     /**
      * @MongoDB\Int
      */
-    protected $authorId;
+    protected $userId;
 
     /**
      * @MongoDB\Date
@@ -57,7 +57,7 @@ class Post
     /**
      * Set title
      *
-     * @param string $title            
+     * @param string $title
      * @return self
      */
     public function setTitle($title)
@@ -79,7 +79,7 @@ class Post
     /**
      * Set content
      *
-     * @param string $content            
+     * @param string $content
      * @return self
      */
     public function setContent($content)
@@ -101,7 +101,7 @@ class Post
     /**
      * Set coordinate
      *
-     * @param Dat\BlogBundle\Document\Coordinate $coordinate            
+     * @param Dat\BlogBundle\Document\Coordinate $coordinate
      * @return self
      */
     public function setCoordinate(\Dat\BlogBundle\Document\Coordinate $coordinate)
@@ -121,31 +121,31 @@ class Post
     }
 
     /**
-     * Set authorId
+     * Set userId
      *
-     * @param int $authorId            
+     * @param int $userId
      * @return self
      */
-    public function setAuthorId($authorId)
+    public function setUserId($userId)
     {
-        $this->authorId = $authorId;
+        $this->userId = $userId;
         return $this;
     }
 
     /**
-     * Get authorId
+     * Get userId
      *
-     * @return int $authorId
+     * @return int $userId
      */
-    public function getAuthorId()
+    public function getUserId()
     {
-        return $this->authorId;
+        return $this->userId;
     }
 
     /**
      * Set createdAt
      *
-     * @param date $createdAt            
+     * @param date $createdAt
      * @return self
      */
     public function setCreatedAt($createdAt)

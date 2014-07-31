@@ -8,6 +8,9 @@ parameters:
     biz_api.user_avatar.class: Dat\FileBundle\Document\Photo
     biz_api.user_avatar_handler.class: Biz\ApiBundle\Handler\UserAvatarHandler
 
+    biz_api.post.class: Dat\BlogBundle\Document\Post
+    biz_api.post_handler.class: Biz\ApiBundle\Handler\PostHandler
+
 services:
     biz_api.user_handler:
         class: %biz_api.user_handler.class%
@@ -18,3 +21,6 @@ services:
     biz_api.user_avatar_Handler:
         class: %biz_api.user_avatar_handler.class%
         arguments: [@doctrine_mongodb.odm.file_document_manager, %biz_api.user_avatar.class%, @form.factory]
+    biz_api.post_handler:
+        class: %biz_api.post_handler.class%
+        arguments: [@doctrine_mongodb.odm.blog_document_manager, %biz_api.post.class%, @form.factory]

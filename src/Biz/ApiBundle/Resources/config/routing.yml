@@ -12,3 +12,8 @@ api_user_avatar:
     type: rest
     name_prefix: api_
     parent: api_user
+
+api_post:
+    resource: Biz\ApiBundle\Controller\PostController
+    type: rest
+    name_prefix: api_
