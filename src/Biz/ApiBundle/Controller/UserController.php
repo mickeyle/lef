@@ -42,10 +42,11 @@ class UserController extends FOSRestController
     }
 
     /**
-     * Register a user
+     * Register a User from the submitted data.
      *
      * @ApiDoc(
      * resource = true,
+     * description = "Creates a new user from the submitted data.",
      * input = "Biz\ApiBundle\Form\UserType",
      * statusCodes = {
      * 201 = "Returned when successful",
@@ -65,7 +66,7 @@ class UserController extends FOSRestController
             $newUser = $this->get(self::USER_HANDLER)->post($request->request->all());
             $routeOptions = array(
                 'id' => $newUser->getId(),
-                '_format' => $this->container->get('request')->get('_format')
+                '_format' => $request->get('_format')
             );
             
             return $this->routeRedirectView('api_get_user', $routeOptions, Codes::HTTP_CREATED);

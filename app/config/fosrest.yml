@@ -22,6 +22,7 @@ fos_rest:
     allowed_methods_listener: true
     access_denied_listener:
         json: true
+    disable_csrf_role: ROLE_API
 
 sensio_framework_extra:
     view: { annotations: false }
